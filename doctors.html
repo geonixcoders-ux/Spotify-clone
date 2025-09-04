@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Healix Care • Doctors</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+  <script defer src="chatbot.js"></script>
+</head>
+<body>
+  <div data-include="header"></div>
+
+  <section class="section container">
+    <h1>Find a Doctor</h1>
+    <div class="filterbar">
+      <input id="doctorSearch" type="search" placeholder="Search by name or specialty…" oninput="filterCards('doctorSearch','doctorsGrid')" />
+      <select id="specialtyFilter" onchange="filterDoctorsBySpecialty()">
+        <option value="">All Specialties</option>
+        <option>Cardiology</option>
+        <option>Dermatology</option>
+        <option>Pediatrics</option>
+        <option>Orthopedics</option>
+        <option>Gynecology</option>
+      </select>
+    </div>
+
+    <div class="grid-3" id="doctorsGrid">
+      <div class="doc-card" data-text="riya sharma cardiology">
+        <img src="https://picsum.photos/seed/doc1/400/260" alt="Dr. Riya Sharma">
+        <h3>Dr. Riya Sharma</h3>
+        <p>Cardiology • 10 yrs</p>
+        <button class="btn" onclick="openAppointment('Dr. Riya Sharma','Cardiology')">Book Appointment</button>
+      </div>
+      <div class="doc-card" data-text="arjun mehta dermatology">
+        <img src="https://picsum.photos/seed/doc2/400/260" alt="Dr. Arjun Mehta">
+        <h3>Dr. Arjun Mehta</h3>
+        <p>Dermatology • 8 yrs</p>
+        <button class="btn" onclick="openAppointment('Dr. Arjun Mehta','Dermatology')">Book Appointment</button>
+      </div>
+      <div class="doc-card" data-text="meera kapoor pediatrics">
+        <img src="https://picsum.photos/seed/doc3/400/260" alt="Dr. Meera Kapoor">
+        <h3>Dr. Meera Kapoor</h3>
+        <p>Pediatrics • 12 yrs</p>
+        <button class="btn" onclick="openAppointment('Dr. Meera Kapoor','Pediatrics')">Book Appointment</button>
+      </div>
+      <div class="doc-card" data-text="karthik iyer orthopedics">
+        <img src="https://picsum.photos/seed/doc4/400/260" alt="Dr. Karthik Iyer">
+        <h3>Dr. Karthik Iyer</h3>
+        <p>Orthopedics • 9 yrs</p>
+        <button class="btn" onclick="openAppointment('Dr. Karthik Iyer','Orthopedics')">Book Appointment</button>
+      </div>
+      <div class="doc-card" data-text="sakshi verma gynecology">
+        <img src="https://picsum.photos/seed/doc5/400/260" alt="Dr. Sakshi Verma">
+        <h3>Dr. Sakshi Verma</h3>
+        <p>Gynecology • 11 yrs</p>
+        <button class="btn" onclick="openAppointment('Dr. Sakshi Verma','Gynecology')">Book Appointment</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment sheet -->
+  <div class="sheet" id="apptSheet" aria-hidden="true">
+    <div class="sheet-content">
+      <button class="sheet-close" onclick="closeAppointment()">×</button>
+      <h3>Book Appointment</h3>
+      <form id="apptForm" onsubmit="return submitAppointment(event)">
+        <div class="grid-2">
+          <input name="patient" placeholder="Patient Name" required />
+          <input name="phone" placeholder="Phone Number" required />
+        </div>
+        <input id="doctorField" name="doctor" placeholder="Doctor" readonly />
+        <input id="specialtyField" name="specialty" placeholder="Specialty" readonly />
+        <div class="grid-2">
+          <input name="date" type="date" required />
+          <select name="slot" required>
+            <option value="">Select Slot</option>
+            <option>10:00 AM</option>
+            <option>11:30 AM</option>
+            <option>2:00 PM</option>
+            <option>4:30 PM</option>
+            <option>7:00 PM</option>
+          </select>
+        </div>
+        <button class="btn" type="submit">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <div data-include="footer"></div>
+  <div id="chatbot"></div>
+</body>
+</html>

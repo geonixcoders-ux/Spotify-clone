@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Healix Care • Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+  <script defer src="chatbot.js"></script>
+</head>
+<body>
+  <div data-include="header"></div>
+
+  <section class="section container">
+    <h1>Contact Us</h1>
+    <div class="grid-2">
+      <form id="contactForm" class="card" onsubmit="return submitContact(event)">
+        <input name="name" placeholder="Full Name" required />
+        <div class="grid-2">
+          <input name="email" placeholder="Email" required />
+          <input name="phone" placeholder="Phone" required />
+        </div>
+        <textarea name="message" rows="4" placeholder="How can we help?" required></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+
+      <div class="card">
+        <h3>Visit us</h3>
+        <p>Delhi NCR, India</p>
+        <div class="map">
+          <iframe
+            title="Map"
+            width="100%" height="260" style="border:0"
+            loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.992688281523!2d77.209021!3d28.613939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM2JzUwLjIiTiA3N8KwMTInMzIuNSJF!5e0!3m2!1sen!2sin!4v1686740000000">
+          </iframe>
+        </div>
+        <div class="footer-links mt8">
+          <div>📞 +91 98765 43210</div>
+          <div>✉️ support@healixcare.in</div>
+          <div>⏰ Mon–Sun: 8 AM – 10 PM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div data-include="footer"></div>
+  <div id="chatbot"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Healix Care • Services</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+  <script defer src="chatbot.js"></script>
+</head>
+<body>
+  <div data-include="header"></div>
+
+  <section class="section container">
+    <h1>Our Services</h1>
+    <div class="filterbar">
+      <input id="serviceSearch" type="search" placeholder="Search services…" oninput="filterCards('serviceSearch','servicesGrid')" />
+    </div>
+    <div class="grid-3" id="servicesGrid">
+      <div class="card" data-text="doctor consultation general">
+        <h3>Doctor Consultation</h3>
+        <p>Video or clinic visits across 25+ specialties.</p>
+      </div>
+      <div class="card" id="lab" data-text="lab tests diagnostics blood">
+        <h3>Lab Tests</h3>
+        <p>Home collection, NABL labs, fast TAT.</p>
+      </div>
+      <div class="card" id="pharmacy" data-text="pharmacy medicines drugs delivery">
+        <h3>Pharmacy</h3>
+        <p>10-minute delivery in select areas.</p>
+      </div>
+      <div class="card" data-text="physiotherapy rehab">
+        <h3>Physiotherapy</h3>
+        <p>Certified physios at home or clinic.</p>
+      </div>
+      <div class="card" data-text="dental dentist">
+        <h3>Dental Care</h3>
+        <p>Cosmetic & preventive treatments.</p>
+      </div>
+      <div class="card" data-text="mental health counseling">
+        <h3>Mental Health</h3>
+        <p>Confidential counseling & therapy.</p>
+      </div>
+    </div>
+  </section>
+
+  <div data-include="footer"></div>
+  <div id="chatbot"></div>
+</body>
+</html>

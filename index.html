@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Healix Care • Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+  <script defer src="chatbot.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-wrap">
+      <a class="logo" href="index.html">
+        <svg viewBox="0 0 24 24" class="icon-md"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm1 17h-2v-2h2zm2.07-7.75-.9.92A3.49 3.49 0 0 0 13 14h-2v-.5a5.48 5.48 0 0 1 1.57-3.9l1.2-1.2A1.5 1.5 0 0 0 12.5 6 1.5 1.5 0 0 0 11 7.5H9a3.5 3.5 0 1 1 6.07 2.75z"/></svg>
+        <span>Healix Care</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="contact.html">Contact</a>
+        <a href="auth.html" class="btn-sm">Login / Register</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Search + Emergency -->
+    <div class="container header-tools">
+      <form class="search" onsubmit="return handleGlobalSearch(event)">
+        <input id="globalSearch" type="search" placeholder="Search doctors or services…" />
+        <button class="btn" type="submit">Search</button>
+      </form>
+      <a class="btn-outline call-now" href="tel:+91108">🚑 Emergency</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>Your Health, Our Priority</h1>
+        <p>24×7 doctor consults, lab tests, pharmacy, and <strong>10-minute medicine delivery</strong> — all in one place.</p>
+        <div class="hero-actions">
+          <a class="btn" href="doctors.html">Book Appointment</a>
+          <a class="btn-secondary" href="#delivery">Order Medicine</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="glow-card">
+          <img src="https://picsum.photos/seed/healthx/560/380" alt="Healthcare illustration" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Services -->
+  <section class="section container">
+    <h2 class="section-title">What do you need today?</h2>
+    <div class="grid-4">
+      <a class="card hover-lift" href="doctors.html">
+        <div class="card-icon">🩺</div>
+        <h3>Doctor Consult</h3>
+        <p>Video or in-clinic appointments with top specialists.</p>
+      </a>
+      <a class="card hover-lift" href="services.html#lab">
+        <div class="card-icon">🧪</div>
+        <h3>Lab Tests</h3>
+        <p>Home sample collection, smart reports, quick turnaround.</p>
+      </a>
+      <a class="card hover-lift" href="#delivery">
+        <div class="card-icon">💊</div>
+        <h3>Pharmacy</h3>
+        <p>Genuine medicines, tracked orders, easy refills.</p>
+      </a>
+      <a class="card hover-lift" href="contact.html">
+        <div class="card-icon">🆘</div>
+        <h3>Emergency</h3>
+        <p>One-tap emergency assistance and ambulance support.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 10-minute delivery highlight -->
+  <section id="delivery" class="section container">
+    <div class="feature feature-accent hover-lift">
+      <div>
+        <h2>10-Minute Medicine Delivery 🚀</h2>
+        <p>Get essential medicines delivered to your doorstep in <strong>10 minutes</strong>*. Real-time tracking, secure payments, and pharmacist chat.</p>
+        <ul class="feature-list">
+          <li>Live order tracking</li>
+          <li>Verified inventory</li>
+          <li>Contactless delivery</li>
+        </ul>
+        <div class="disclaimer">*Available in select areas between 8 AM – 10 PM.</div>
+        <div class="hero-actions">
+          <button class="btn" onclick="openOrderSheet()">Order Now</button>
+          <a class="btn-secondary" href="services.html#pharmacy">Learn More</a>
+        </div>
+      </div>
+      <img class="feature-img" src="https://picsum.photos/seed/medvroom/540/360" alt="Fast delivery" />
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section container">
+    <h2 class="section-title">Patients love us</h2>
+    <div class="carousel" id="testimonials">
+      <div class="carousel-track">
+        <div class="testimonial">
+          <p>“Booked a cardiology consult in 2 minutes. Smooth experience!”</p>
+          <span>— Riya S.</span>
+        </div>
+        <div class="testimonial">
+          <p>“10-minute delivery actually arrived in 8. Life saver.”</p>
+          <span>— Aarav K.</span>
+        </div>
+        <div class="testimonial">
+          <p>“Reports are clean and easy to understand. Support is prompt.”</p>
+          <span>— Meera D.</span>
+        </div>
+      </div>
+      <div class="carousel-dots"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo footer-logo">
+          <svg viewBox="0 0 24 24" class="icon-md"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm1 17h-2v-2h2zm2.07-7.75-.9.92A3.49 3.49 0 0 0 13 14h-2v-.5a5.48 5.48 0 0 1 1.57-3.9l1.2-1.2A1.5 1.5 0 0 0 12.5 6 1.5 1.5 0 0 0 11 7.5H9a3.5 3.5 0 1 1 6.07 2.75z"/></svg>
+          <span>Healix Care</span>
+        </div>
+        <p>Integrated healthcare platform for India. Book doctors, order meds, and get lab tests from home.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="auth.html">Login / Register</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li>📍 Delhi NCR, India</li>
+          <li>📞 +91 98765 43210</li>
+          <li>✉️ support@healixcare.in</li>
+        </ul>
+        <div class="socials">
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="LinkedIn">💼</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">© <span id="year"></span> Healix Care. All rights reserved.</div>
+  </footer>
+
+  <!-- Order Sheet (simple modal) -->
+  <div class="sheet" id="orderSheet" aria-hidden="true">
+    <div class="sheet-content">
+      <button class="sheet-close" onclick="closeOrderSheet()">×</button>
+      <h3>Quick Medicine Order</h3>
+      <form id="orderForm" onsubmit="return submitOrder(event)">
+        <div class="grid-2">
+          <input required name="name" placeholder="Full Name" />
+          <input required name="phone" placeholder="Phone Number" />
+        </div>
+        <input required name="address" placeholder="Delivery Address" />
+        <textarea required name="items" rows="3" placeholder="List medicines (name + qty)"></textarea>
+        <div class="grid-2">
+          <select name="payment" required>
+            <option value="">Select Payment</option>
+            <option>UPI</option>
+            <option>Card</option>
+            <option>Cash on Delivery</option>
+          </select>
+          <select name="timeslot" required>
+            <option value="">Quick Slot</option>
+            <option>ASAP (10 min)</option>
+            <option>30 min</option>
+            <option>60 min</option>
+          </select>
+        </div>
+        <button class="btn" type="submit">Place Order</button>
+      </form>
+      <p class="small mt8">By ordering, you agree to our Terms & Privacy.</p>
+    </div>
+  </div>
+
+  <!-- Chatbot (floating) -->
+  <div id="chatbot"></div>
+</body>
+</html>
